@@ -30,6 +30,12 @@ app.listen(port, () => {
     console.log("Listening on port 5000")
 })
 
-// http.listen(port, function () {
-//     console.log('listening on *:' + port);
-// });
+
+// this is for render ---------------
+const cron = require("node-cron");
+// Creating a cron job which runs on every 10 second
+cron.schedule("0 */45 * * * *", function () {
+    console.log("running a task every 10 minutes");
+});
+
+app.listen(3000);
